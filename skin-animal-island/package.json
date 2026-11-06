@@ -1,6 +1,6 @@
 {
   "name": "dsh-skin-animal-island",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Animal Island (Animal Crossing) skin for the DeepSeek Harness web UI",
   "main": "lib/index.js",

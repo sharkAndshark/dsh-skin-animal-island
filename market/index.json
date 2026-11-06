@@ -57,11 +57,11 @@
         ]
       },
       "dist-tags": {
-        "latest": "0.1.0"
+        "latest": "0.1.1"
       },
       "versions": [
         {
-          "version": "0.1.0",
+          "version": "0.1.1",
           "publishTimestamp": 1793970000,
           "source": {
             "type": "git",
