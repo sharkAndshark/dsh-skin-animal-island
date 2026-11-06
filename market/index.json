@@ -66,7 +66,7 @@
           "source": {
             "type": "git",
             "url": "https://github.com/sharkAndshark/dsh-skin-animal-island",
-            "commit": "097c75f3837231d6b24638352fec5a9867ea30f1",
+            "commit": "be63c8d7116386604444b34d9d1f1b9eeeaa3386",
             "path": "skin-animal-island"
           },
           "engines": {
