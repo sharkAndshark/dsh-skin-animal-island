@@ -1,0 +1,11 @@
+/* 「更游戏化」的实验变体：把所有 elevation 表面的发丝描边加粗到 1.5px。
+   由 scripts/compare-chunky.mjs 在页面里临时注入，用来和当前版本对比。 */
+html body {
+  --dsw-elevation-stroke: 0 0 0 1.5px var(--dsw-elevation-stroke-color);
+  --dsw-elevation-stroke-color: #d9cdb2;
+}
+
+html body[data-ds-dark-theme] {
+  --dsw-elevation-stroke: 0 0 0 1.5px var(--dsw-elevation-stroke-color);
+  --dsw-elevation-stroke-color: #4e6a61;
+}

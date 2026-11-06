@@ -1,0 +1,5 @@
+# Animal Island skin bundle layer: one host row that serves the skin stylesheet
+# and its font/asset files, plus a head <link> so the palette applies at first paint.
+- insert:
+    - id: skin-animal-island
+      name: dsh-skin-animal-island

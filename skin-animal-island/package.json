@@ -1,0 +1,51 @@
+{
+  "name": "dsh-skin-animal-island",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Animal Island (Animal Crossing) skin for the DeepSeek Harness web UI",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "assets",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/schemastery": "*"
+  },
+  "engines": {
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "author": "sharkAndshark",
+  "homepage": "https://github.com/sharkAndshark/dsh-skin-animal-island#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git",
+    "directory": "skin-animal-island"
+  },
+  "keywords": [
+    "dsh",
+    "skin",
+    "theme",
+    "animal-crossing",
+    "ui"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Animal Island skin",
+    "zh": "动森皮肤"
+  },
+  "description": {
+    "en": "A cozy Animal Crossing style skin for the DeepSeek Harness web UI",
+    "zh": "给 DeepSeek Harness Web 客户端的动森风格皮肤"
+  },
+  "metadata": {
+    "categories": {
+      "appearance": {
+        "title": {
+          "en": "Appearance",
+          "zh": "外观"
+        }
+      }
+    },
+    "labels": {
+      "skin": {
+        "title": {
+          "en": "Skin",
+          "zh": "皮肤"
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "dsh-skin-animal-island",
+      "title": {
+        "en": "Animal Island skin",
+        "zh": "动森皮肤"
+      },
+      "description": {
+        "en": "Cream paper, earth-brown text, mint accent, dotted wallpaper, chunky icons; light 白天岛 and dark 森林夜.",
+        "zh": "奶油纸底、大地棕文字、薄荷强调、波点壁纸、加粗图标；亮色「白天岛」与暗色「森林夜」两套。"
+      },
+      "icon": "icons/leaf.svg",
+      "author": "sharkAndshark",
+      "homepage": "https://github.com/sharkAndshark/dsh-skin-animal-island#readme",
+      "repository": {
+        "url": "https://github.com/sharkAndshark/dsh-skin-animal-island",
+        "directory": "skin-animal-island"
+      },
+      "metadata": {
+        "category": "appearance",
+        "labels": [
+          "skin"
+        ],
+        "keywords": [
+          "skin",
+          "theme",
+          "animal-crossing",
+          "ui"
+        ]
+      },
+      "dist-tags": {
+        "latest": "0.1.0"
+      },
+      "versions": [
+        {
+          "version": "0.1.0",
+          "publishTimestamp": 1793970000,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/sharkAndshark/dsh-skin-animal-island",
+            "commit": "097c75f3837231d6b24638352fec5a9867ea30f1",
+            "path": "skin-animal-island"
+          },
+          "engines": {
+            "dsh": ">=0.2.2-rc.1 <0.3.0"
+          }
+        }
+      ]
+    }
+  ]
+}

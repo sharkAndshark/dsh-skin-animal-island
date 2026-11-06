@@ -1,0 +1,763 @@
+@import url('./fonts/zcool.css');
+
+/* ============================================================================
+   Animal Island skin for the DeepSeek Harness web client
+   ----------------------------------------------------------------------------
+   所有覆盖都写在 `html body` 上：比 ui-theme 的 `body { --dsw-alias-*: … }`
+   高一级特异性，与样式表加载先后无关。
+   参考来源：guokaigdg/animal-island-ui（MIT）+ Typora「森林夜」暗色。
+   改完刷新页面即可生效（本文件以 no-store 提供）。
+   ========================================================================== */
+
+/* ---------- 字体：Nunito（拉丁）+ 系统圆体（中文） ---------- */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/nunito-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/nunito-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./fonts/nunito-latin-900-normal.woff2') format('woff2');
+}
+
+/* ============================================================================
+   亮色「白天岛」
+   ========================================================================== */
+html body {
+  /* ---- 表面 ---- */
+  --dsw-alias-bg-base: #faf7ed;
+  --dsw-alias-bg-layer-1: #fffdf5;
+  --dsw-alias-bg-layer-2: #f8f4e6;
+  --dsw-alias-bg-layer-3: #f2ebd7;
+  --dsw-alias-bg-overlay: #fbf7ea;
+  --dsw-alias-bg-module-platform: #f2ebd7;
+  --dsw-alias-bg-multi-select: #f2ebd7;
+  --dsw-alias-bg-skeleton: rgb(196 184 158 / 0.2);
+  --dsw-alias-bg-mask-1: rgb(52 42 28 / 0.28);
+  --dsw-alias-bg-mask-2: rgb(52 42 28 / 0.14);
+  --dsw-alias-bg-mask-3: rgb(52 42 28 / 0.5);
+  --dsw-alias-bg-mask-drop: rgb(255 253 245 / 0.72);
+  --dsw-alias-bg-document-preview: #f7f2e3;
+  --dsw-alias-label-document-preview: #6b573c;
+
+  /* ---- 文字（大地棕，永不纯黑） ---- */
+  --dsw-alias-label-primary: #59452e;
+  --dsw-alias-label-primary-bluish: #4c3d2b;
+  --dsw-alias-label-primary-dimmed: #3f3223;
+  --dsw-alias-label-primary-foreground: #fffdf5;
+  --dsw-alias-label-primary-inverted: #fffdf5;
+  --dsw-alias-label-secondary: #7c6a52;
+  --dsw-alias-label-tertiary: #96876e;
+  --dsw-alias-label-caption: #b3a68d;
+  --dsw-alias-label-dimmed: #e3d9c3;
+  --dsw-alias-label-shimmer: rgb(89 69 46 / 0.28);
+  --dsw-alias-label-deep-diving: #0a8279;
+  --dsw-alias-label-deep-diving-shimmer: rgb(10 130 121 / 0.3);
+  --dsw-alias-menu-icon: #6a573d;
+  --dsw-alias-link: #0a8279;
+
+  /* ---- 描边 ---- */
+  --dsw-alias-border-l1: rgb(120 98 66 / 0.1);
+  --dsw-alias-border-l2: rgb(120 98 66 / 0.16);
+  --dsw-alias-border-l2-darkmode-thin: rgb(120 98 66 / 0.16);
+  --dsw-alias-border-l3: rgb(120 98 66 / 0.22);
+  --dsw-alias-border-l4: rgb(120 98 66 / 0.3);
+  --dsw-alias-border-inverted: rgb(120 98 66 / 0);
+  --dsw-alias-border-inverted2: rgb(120 98 66 / 0);
+
+  /* ---- 品牌与按钮 ---- */
+  --dsw-alias-brand-primary: #19c8b9;
+  --dsw-alias-brand-primary-invert: #3f3223;
+  --dsw-alias-brand-primary-new-colorprimary-new-color: #0a8279;
+  --dsw-alias-brand-text: #59452e;
+  --dsw-alias-button-primary-fill: #0e9186;
+  --dsw-alias-button-primary-hover: #0b7d73;
+  --dsw-alias-button-primary-dimmed: #d8f2ee;
+  --dsw-alias-button-contrast-fill: #59452e;
+  --dsw-alias-button-elevated-fill: #fffdf5;
+  --dsw-alias-button-floating-fill: #fffdf5;
+  --dsw-alias-button-floating-hover: #f5efdd;
+  --dsw-alias-button-ghost-active-fill: #efe8d5;
+  --dsw-alias-button-ghost-active-light-fill: #efe8d5;
+  --dsw-alias-button-ghost-active-border: #c4b89e;
+  --dsw-alias-button-ghost-active-hover: #e8e0ca;
+  --dsw-alias-button-info-fill: #0a8279;
+  --dsw-alias-button-info-hover: #0e9186;
+  --dsw-alias-button-tool-bar-fill: rgb(89 69 46 / 0.45);
+  --dsw-alias-button-tool-bar-fill-invisible: rgb(89 69 46 / 0.3);
+  --dsw-alias-button-tool-bar-hover: rgb(89 69 46 / 0.55);
+
+  /* ---- 交互层 ---- */
+  --dsw-alias-interactive-bg-hover: rgb(120 98 66 / 0.07);
+  --dsw-alias-interactive-bg-active: rgb(120 98 66 / 0.12);
+  --dsw-alias-interactive-bg-hover-accent: rgb(25 200 185 / 0.16);
+  --dsw-alias-interactive-bg-hover-danger: rgb(224 90 90 / 0.08);
+  --dsw-alias-interactive-bg-hover-solid: #f5efdd;
+
+  /* ---- 状态色 ---- */
+  --dsw-alias-state-success-primary: #6fba2c;
+  --dsw-alias-state-success-secondary: #85cc45;
+  --dsw-alias-state-success-tertiary: #eaf5dd;
+  --dsw-alias-state-warn-primary: #f5c31c;
+  --dsw-alias-state-warn-secondary: #f7d04a;
+  --dsw-alias-state-warn-tertiary: #fdf3d4;
+  --dsw-alias-state-warn-label: #a5790a;
+  --dsw-alias-state-error-primary: #e05a5a;
+  --dsw-alias-state-error-secondary: #f28b8b;
+  --dsw-alias-state-business-primary: #0a8279;
+  --dsw-alias-state-business-tertiary: #d8f2ee;
+  --dsw-alias-state-done-primary: #8b6fd0;
+  --dsw-alias-state-idle-primary: #d9cfb8;
+
+  /* ---- Markdown / 代码 ---- */
+  --dsw-alias-markdown-inline-code: #f4edda;
+  --dsw-alias-markdown-code-block: #f7f2e3;
+  --dsw-alias-markdown-code-block-banner: #f2ebd7;
+  --dsw-alias-markdown-code-segment-selected: #fffdf5;
+  --dsw-alias-markdown-code-segment-unselected: #f0e9d6;
+  --dsw-alias-markdown-citation: #f0e9d6;
+  --dsw-alias-markdown-placeholder: #b3a68d;
+  --dsw-alias-markdown-tag: #f2ebd7;
+  --dsw-alias-code-diff-added: rgb(111 186 44 / 0.12);
+  --dsw-alias-code-diff-deleted: rgb(224 90 90 / 0.12);
+  --dsw-alias-file-diff-added-bg: #eef7e6;
+  --dsw-alias-file-diff-added-gutter: #f5fbef;
+  --dsw-alias-file-diff-added-marker: #4a8f2a;
+  --dsw-alias-file-diff-deleted-bg: #fbeae6;
+  --dsw-alias-file-diff-deleted-gutter: #fdf3f0;
+  --dsw-alias-file-diff-deleted-marker: #c15348;
+
+  /* ---- 滚动条 ---- */
+  --dsw-alias-scrollbar-bg-l1: #ddd3bc;
+  --dsw-alias-scrollbar-bg-l2: #ddd3bc;
+  --dsw-alias-scrollbar-hover-l1: #c4b89e;
+  --dsw-alias-scrollbar-hover-l2: #c4b89e;
+
+  /* ---- 气泡 / 菜单 / 侧栏等区域色 ---- */
+  --dsw-specific-sidebar-fill: #f2ead7;
+  --dsw-specific-sidebar-nav-item-active: #e6dcc4;
+  --dsw-specific-sidebar-nav-item-active-accent: #f8f4e6;
+  --dsw-specific-bubble: #e6f9f6;
+  --dsw-specific-bubble-highlight: #ccf2ec;
+  --dsw-specific-input-major: #fffdf5;
+  --dsw-specific-login-input: #f7f2e3;
+  --dsw-specific-selector: #f2ebd7;
+  --dsw-specific-tip: #f7f2e3;
+  --dsw-menu-surface-fill: rgb(251 247 234 / 0.72);
+  --dsw-alias-menu-group-header-fill: rgb(251 247 234 / 0.94);
+  --dsw-specific-menu: var(--dsw-menu-surface-fill);
+  --dsw-alias-toast-bg: #59452e;
+  --dsw-alias-toast-label: #fffdf5;
+  --dsw-alias-tooltip-bg: #4b3b27;
+  --dsw-alias-tooltip-key-bg: color-mix(in srgb, var(--dsw-alias-tooltip-bg), white 18%);
+  --dsw-alias-switch-thumb: #fffdf5;
+  --dsw-alias-turn-trigger-bg: #f7f2e3;
+  --dsw-alias-turn-trigger-bg-hover: rgb(120 98 66 / 0.07);
+
+  /* ---- 装饰插画 ---- */
+  --dsw-alias-illustration-background: #f7f2e3;
+  --dsw-alias-illustration-surface: #efe6d0;
+  --dsw-alias-illustration-backing: #dcd0b4;
+  --dsw-alias-illustration-detail: #dcd0b4;
+  --dsw-alias-illustration-inset: var(--dsw-alias-illustration-surface);
+  --dsw-alias-illustration-shadow: var(--dsw-alias-illustration-surface);
+
+  /* ---- 形状 / 深度 / 焦点 ---- */
+  --dsw-radius-xs: 6px;
+  --dsw-radius-sm: 10px;
+  --dsw-radius-md: 14px;
+  --dsw-radius-lg: 18px;
+  --dsw-radius-xl: 22px;
+  --dsw-radius-panel: 26px;
+  --dsw-shadow-lv1: 0 2px 4px 0 rgb(61 52 40 / 0.05);
+  --dsw-shadow-lv1-blur: 0 4px 12px 0 rgb(61 52 40 / 0.06);
+  --dsw-shadow-lv2: 0 4px 12px 0 rgb(61 52 40 / 0.06), 0 2px 8px 0 rgb(61 52 40 / 0.04);
+  --dsw-shadow-lv3: 0 12px 30px 0 rgb(61 52 40 / 0.1), 0 2px 8px 0 rgb(61 52 40 / 0.06);
+  --dsw-elevation-stroke-color: #e6dcc4;
+  --dsw-elevation-panel:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color), 0 3px 10px 0 rgb(61 52 40 / 0.08), 0 0 16px 0 rgb(61 52 40 / 0.04);
+  --dsw-elevation-prominent:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color), 0 4px 14px 0 rgb(61 52 40 / 0.12), 0 0 20px 0 rgb(61 52 40 / 0.06);
+  --dsw-elevation-soft:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color), 0 4px 16px 0 rgb(61 52 40 / 0.07), 0 0 24px 0 rgb(61 52 40 / 0.05);
+  --dsw-focus-ring-color: #f5a800;
+
+  /* ---- 排版 ---- */
+  --dsh-font-family-text: 'Nunito', 'Yuanti SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+/* ============================================================================
+   暗色「森林夜」
+   ========================================================================== */
+html body[data-ds-dark-theme] {
+  --dsw-alias-bg-base: #141f1e;
+  --dsw-alias-bg-layer-1: #213029;
+  --dsw-alias-bg-layer-2: #293a33;
+  --dsw-alias-bg-layer-3: #30443c;
+  --dsw-alias-bg-overlay: #213029;
+  --dsw-alias-bg-module-platform: #293a33;
+  --dsw-alias-bg-multi-select: #293a33;
+  --dsw-alias-bg-skeleton: rgb(245 232 200 / 0.08);
+  --dsw-alias-bg-mask-1: rgb(0 0 0 / 0.42);
+  --dsw-alias-bg-mask-2: rgb(0 0 0 / 0.24);
+  --dsw-alias-bg-mask-3: rgb(0 0 0 / 0.6);
+  --dsw-alias-bg-mask-drop: rgb(26 38 36 / 0.72);
+  --dsw-alias-bg-document-preview: #1c2925;
+  --dsw-alias-label-document-preview: #cfc2a2;
+
+  --dsw-alias-label-primary: #f5e8c8;
+  --dsw-alias-label-primary-bluish: #f2e6c9;
+  --dsw-alias-label-primary-dimmed: #fdf6e3;
+  --dsw-alias-label-primary-foreground: #fffdf5;
+  --dsw-alias-label-primary-inverted: #1a2624;
+  --dsw-alias-label-secondary: #d3c6a6;
+  --dsw-alias-label-tertiary: #b3a68a;
+  --dsw-alias-label-caption: #94886c;
+  --dsw-alias-label-dimmed: #4a4433;
+  --dsw-alias-label-shimmer: rgb(245 232 200 / 0.32);
+  --dsw-alias-label-deep-diving: #2dd4c1;
+  --dsw-alias-label-deep-diving-shimmer: rgb(45 212 193 / 0.3);
+  --dsw-alias-menu-icon: #d9caa6;
+  --dsw-alias-link: #4fe0cf;
+
+  --dsw-alias-border-l1: rgb(245 232 200 / 0.08);
+  --dsw-alias-border-l2: rgb(245 232 200 / 0.14);
+  --dsw-alias-border-l2-darkmode-thin: rgb(245 232 200 / 0.14);
+  --dsw-alias-border-l3: rgb(245 232 200 / 0.2);
+  --dsw-alias-border-l4: rgb(245 232 200 / 0.26);
+  --dsw-alias-border-inverted: rgb(0 0 0 / 0);
+  --dsw-alias-border-inverted2: rgb(0 0 0 / 0);
+
+  --dsw-alias-brand-primary: #2dd4c1;
+  --dsw-alias-brand-primary-invert: #f5e8c8;
+  --dsw-alias-brand-primary-new-colorprimary-new-color: #2dd4c1;
+  --dsw-alias-brand-text: #f5e8c8;
+  --dsw-alias-button-primary-fill: #17968d;
+  --dsw-alias-button-primary-hover: #1fb3a7;
+  --dsw-alias-button-primary-dimmed: #24403a;
+  --dsw-alias-button-contrast-fill: #f5e8c8;
+  --dsw-alias-button-elevated-fill: #2b3d37;
+  --dsw-alias-button-floating-fill: #243430;
+  --dsw-alias-button-floating-hover: #2b3d37;
+  --dsw-alias-button-ghost-active-fill: #31453e;
+  --dsw-alias-button-ghost-active-light-fill: #31453e;
+  --dsw-alias-button-ghost-active-border: #5a6e68;
+  --dsw-alias-button-ghost-active-hover: #3a4f47;
+  --dsw-alias-button-info-fill: #17968d;
+  --dsw-alias-button-info-hover: #2dd4c1;
+  --dsw-alias-button-tool-bar-fill: rgb(0 0 0 / 0.4);
+  --dsw-alias-button-tool-bar-fill-invisible: rgb(0 0 0 / 0.28);
+  --dsw-alias-button-tool-bar-hover: rgb(0 0 0 / 0.5);
+
+  --dsw-alias-interactive-bg-hover: rgb(245 232 200 / 0.07);
+  --dsw-alias-interactive-bg-active: rgb(245 232 200 / 0.12);
+  --dsw-alias-interactive-bg-hover-accent: rgb(45 212 193 / 0.16);
+  --dsw-alias-interactive-bg-hover-danger: rgb(255 120 120 / 0.1);
+  --dsw-alias-interactive-bg-hover-solid: #31453e;
+
+  --dsw-alias-state-success-primary: #8fd44c;
+  --dsw-alias-state-success-secondary: #a7e070;
+  --dsw-alias-state-success-tertiary: #26381f;
+  --dsw-alias-state-warn-primary: #f5c31c;
+  --dsw-alias-state-warn-secondary: #ffd75e;
+  --dsw-alias-state-warn-tertiary: #3a3115;
+  --dsw-alias-state-warn-label: #f5c31c;
+  --dsw-alias-state-error-primary: #ff7878;
+  --dsw-alias-state-error-secondary: #ff9b9b;
+  --dsw-alias-state-business-primary: #2dd4c1;
+  --dsw-alias-state-business-tertiary: #1d3a35;
+  --dsw-alias-state-done-primary: #b49bea;
+  --dsw-alias-state-idle-primary: #4a4433;
+
+  --dsw-alias-markdown-inline-code: #26352f;
+  --dsw-alias-markdown-code-block: #1c2925;
+  --dsw-alias-markdown-code-block-banner: #26352f;
+  --dsw-alias-markdown-code-segment-selected: #31453e;
+  --dsw-alias-markdown-code-segment-unselected: #243430;
+  --dsw-alias-markdown-citation: #2b3d37;
+  --dsw-alias-markdown-placeholder: #7a705a;
+  --dsw-alias-markdown-tag: #2b3d37;
+  --dsw-alias-code-diff-added: rgb(111 186 44 / 0.16);
+  --dsw-alias-code-diff-deleted: rgb(224 90 90 / 0.16);
+  --dsw-alias-file-diff-added-bg: #22322a;
+  --dsw-alias-file-diff-added-gutter: #26382e;
+  --dsw-alias-file-diff-added-marker: #8fd44c;
+  --dsw-alias-file-diff-deleted-bg: #35262a;
+  --dsw-alias-file-diff-deleted-gutter: #3a2a2e;
+  --dsw-alias-file-diff-deleted-marker: #ff7878;
+
+  --dsw-alias-scrollbar-bg-l1: #3a4f47;
+  --dsw-alias-scrollbar-bg-l2: #3a4f47;
+  --dsw-alias-scrollbar-hover-l1: #5a6e68;
+  --dsw-alias-scrollbar-hover-l2: #5a6e68;
+
+  --dsw-specific-sidebar-fill: #1a2724;
+  --dsw-specific-sidebar-nav-item-active: #293a33;
+  --dsw-specific-sidebar-nav-item-active-accent: #22312c;
+  --dsw-specific-bubble: #2e4a44;
+  --dsw-specific-bubble-highlight: #38564f;
+  --dsw-specific-input-major: #22312c;
+  --dsw-specific-login-input: #1d2a26;
+  --dsw-specific-selector: #293a33;
+  --dsw-specific-tip: #1d2a26;
+  --dsw-menu-surface-fill: rgb(36 52 48 / 0.64);
+  --dsw-alias-menu-group-header-fill: rgb(36 52 48 / 0.94);
+  --dsw-specific-menu: var(--dsw-menu-surface-fill);
+  --dsw-alias-toast-bg: #f5e8c8;
+  --dsw-alias-toast-label: #1a2624;
+  --dsw-alias-tooltip-bg: #31443e;
+  --dsw-alias-tooltip-key-bg: color-mix(in srgb, var(--dsw-alias-tooltip-bg), white 18%);
+  --dsw-alias-switch-thumb: #f5e8c8;
+  --dsw-alias-turn-trigger-bg: #1c2925;
+  --dsw-alias-turn-trigger-bg-hover: rgb(245 232 200 / 0.07);
+
+  --dsw-alias-illustration-background: #1c2925;
+  --dsw-alias-illustration-surface: #293a33;
+  --dsw-alias-illustration-backing: #16211f;
+  --dsw-alias-illustration-detail: #16211f;
+  --dsw-alias-illustration-inset: var(--dsw-alias-illustration-surface);
+  --dsw-alias-illustration-shadow: var(--dsw-alias-illustration-surface);
+
+  --dsw-shadow-lv1: 0 2px 4px 0 rgb(0 0 0 / 0.3);
+  --dsw-shadow-lv1-blur: 0 4px 12px 0 rgb(0 0 0 / 0.3);
+  --dsw-shadow-lv2: 0 4px 12px 0 rgb(0 0 0 / 0.32), 0 2px 8px 0 rgb(0 0 0 / 0.24);
+  --dsw-shadow-lv3: 0 12px 30px 0 rgb(0 0 0 / 0.42), 0 2px 8px 0 rgb(0 0 0 / 0.3);
+  --dsw-elevation-stroke-color: #3d544c;
+  --dsw-elevation-panel:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color), 0 3px 12px 0 rgb(0 0 0 / 0.35), 0 0 16px 0 rgb(0 0 0 / 0.2);
+  --dsw-elevation-prominent:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color), 0 4px 16px 0 rgb(0 0 0 / 0.42), 0 0 20px 0 rgb(0 0 0 / 0.24);
+  --dsw-elevation-soft:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color), 0 4px 18px 0 rgb(0 0 0 / 0.34), 0 0 24px 0 rgb(0 0 0 / 0.2);
+  --dsw-focus-ring-color: #ffcc00;
+}
+
+/* ============================================================================
+   壁纸：奶油底上的两层错位波点
+   ----------------------------------------------------------------------------
+   画在 body::after 的固定浮层上、用低不透明度，所以既能透过各种面板看到，
+   又不会压住正文（点本身比正文淡一个数量级）。
+   ========================================================================== */
+html {
+  background-color: #f3eee0;
+}
+
+html body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, rgb(150 133 100 / 0.62) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgb(150 133 100 / 0.34) 0.9px, transparent 0.9px);
+  background-size: 22px 22px, 11px 11px;
+  background-position: 0 0, 5.5px 5.5px;
+  opacity: 0.16;
+}
+
+html[data-ds-dark-theme] {
+  background-color: #16211f;
+}
+
+html body[data-ds-dark-theme]::after {
+  background-image:
+    radial-gradient(circle, rgb(245 232 200 / 0.55) 1.5px, transparent 1.5px),
+    radial-gradient(circle, rgb(245 232 200 / 0.3) 0.9px, transparent 0.9px);
+  opacity: 0.12;
+}
+
+/* ============================================================================
+   手绘光标 + 选中文本
+   ========================================================================== */
+html body {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M8.5 7.9L9.7 21.1Q10.0 23.8 11.6 21.6L13.1 19.8Q13.8 18.8 14.4 19.9L17.0 24.7Q17.8 26.1 19.2 25.3L19.6 25.1Q21.0 24.3 20.2 22.9L17.6 18.1Q17.0 17.1 18.2 17.0L20.5 16.7Q23.3 16.5 21.1 14.8L10.6 6.7Q8.2 4.8 8.5 7.9Z' fill='%23fff7e6' stroke='%23794f27' stroke-width='2.75' stroke-linejoin='round' stroke-linecap='round'/%3E%3C/svg%3E")
+      8 5,
+    auto;
+}
+
+html body ::selection {
+  background: #e9c46a;
+  color: #2b2620;
+}
+
+/* ============================================================================
+   动森「纸片 / 游戏按钮」质感
+   ----------------------------------------------------------------------------
+   组件类名是 CSS Modules 的 `<hash>_<localName>` 形式，这里按 localName 后缀
+   命中少数关键控件。属于「有意为之的脆弱点」：DSH 升级换了类名时这几条失效，
+   但不会报错，只是回到默认外观。
+   ========================================================================== */
+
+/* 输入卡片：底部 2px 实边 + 暖投影，像一张放在桌上的纸 */
+html body [class*='_composerSeat'] [class$='_card'] {
+  box-shadow:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color),
+    0 2px 0 0 #ece1c6,
+    0 16px 30px -16px rgb(61 52 40 / 0.32);
+}
+
+html body[data-ds-dark-theme] [class*='_composerSeat'] [class$='_card'] {
+  box-shadow:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color),
+    0 2px 0 0 #101a18,
+    0 16px 30px -16px rgb(0 0 0 / 0.55);
+}
+
+/* 主按钮（发送等）：像素堆积 3D 边，hover 抬起、按下压实 */
+html body button[class$='_primary'] {
+  box-shadow: 0 2px 0 0 #0a6e65;
+  transition:
+    box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html body[data-ds-dark-theme] button[class$='_primary'] {
+  box-shadow: 0 2px 0 0 #0b3f3a;
+}
+
+@media (hover: hover) {
+  html body button[class$='_primary']:hover:not(:disabled) {
+    box-shadow: 0 3px 0 0 #0a6e65;
+    transform: translateY(-1px);
+  }
+
+  html body[data-ds-dark-theme] button[class$='_primary']:hover:not(:disabled) {
+    box-shadow: 0 3px 0 0 #0b3f3a;
+  }
+}
+
+html body button[class$='_primary']:active:not(:disabled) {
+  box-shadow: 0 1px 0 0 #0a6e65;
+  transform: translateY(1px);
+}
+
+html body[data-ds-dark-theme] button[class$='_primary']:active:not(:disabled) {
+  box-shadow: 0 1px 0 0 #0b3f3a;
+}
+
+/* 侧栏「新会话」：胶囊 + 纸边 */
+html body button[class$='_newSession'] {
+  border-radius: 999px;
+  box-shadow: 0 2px 0 0 #e9dfc6;
+}
+
+html body[data-ds-dark-theme] button[class$='_newSession'] {
+  box-shadow: 0 2px 0 0 #101a18;
+}
+
+/* 会话悬停预览卡：组件自带 --dsw-hovercard-bg: #2C2C2E（写在元素上），
+   这里按「木牌 / 夜间木牌」重着色；它的正文是浅色，所以只动底色。 */
+html body [class*='_card_'] {
+  --dsw-hovercard-bg: #42341f;
+}
+
+html body[data-ds-dark-theme] [class*='_card_'] {
+  --dsw-hovercard-bg: #26352f;
+}
+
+/* ============================================================================
+   首页装饰层（client 半渲染，见 lib/client.js）
+   ----------------------------------------------------------------------------
+   `conversation.hero.frame` 是 HOC，只包裹滚动体；这里 absolute + z-index:-1
+   落在会话背景之上、内容之下，且不吃指针事件。
+   ========================================================================== */
+.ai-hero-scene {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 2.5% 4.5% 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 覆盖层的直接子元素会被授予 pointer-events: auto，这里连同后代一起收回，
+   否则整块装饰会挡住侧栏的点击。 */
+html body .ai-hero-scene,
+html body .ai-hero-scene * {
+  pointer-events: none !important;
+}
+
+/* 只在空白首页显示：hero 标题（探索未至之境）存在时才有这一段 */
+html body:has([class*='_headline']) .ai-hero-scene {
+  display: flex;
+}
+
+.ai-hero-scene {
+  --ai-hero-cloud: color-mix(in srgb, var(--dsw-alias-bg-layer-1), white 45%);
+}
+
+.ai-hero-scene__svg {
+  width: min(34vw, 440px);
+  height: auto;
+  opacity: 0.8;
+}
+
+html body[data-ds-dark-theme] .ai-hero-scene {
+  --ai-hero-cloud: color-mix(in srgb, var(--dsw-alias-bg-layer-1), white 45%);
+}
+
+.ai-hero-scene__svg {
+  opacity: 0.75;
+}
+
+.ai-hero-cloud--a {
+  animation: ai-drift 34s ease-in-out infinite alternate;
+}
+
+.ai-hero-cloud--b {
+  animation: ai-drift 46s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes ai-drift {
+  from { transform: translateX(-14px); }
+  to   { transform: translateX(22px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-hero-cloud--a,
+  .ai-hero-cloud--b { animation: none; }
+}
+
+/* ============================================================================
+   页面标题：叶子记号
+   ----------------------------------------------------------------------------
+   页面级标题都是 `<h1 class="…_pageTitle">`，用遮罩画一片叶子，不占额外 DOM。
+   ========================================================================== */
+html body [class*='_pageTitle'] {
+  position: relative;
+  padding-left: 28px;
+}
+
+html body [class*='_pageTitle']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-52%) rotate(-10deg);
+  background-color: var(--dsw-alias-state-success-primary, #6fba2c);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20c0-8 5-15 15-16 .6 9-4 15-11 16-1.2.15-2.4.2-4 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20c0-8 5-15 15-16 .6 9-4 15-11 16-1.2.15-2.4.2-4 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* 插件图标是组件内硬编码的冷蓝/紫（#658EFF / #4561EE / #A797FC），
+   作为「App 图标」保留多彩，但把色相整体转到暖侧，避免和大地棕打架。 */
+html body [class*='_cardIcon'] {
+  filter: hue-rotate(-62deg) saturate(0.92) brightness(0.99);
+}
+
+/* ============================================================================
+   正文排版：标题叶片记号、列表标记换叶子色、圆角行内代码
+   ========================================================================== */
+html body [class*='_markdown_'] h1,
+html body [class*='_markdown_'] h2 {
+  letter-spacing: 0.01em;
+}
+
+html body [class*='_markdown_'] h2 {
+  position: relative;
+  padding-left: 19px;
+}
+
+html body [class*='_markdown_'] h2::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 12px;
+  height: 12px;
+  background-color: var(--dsw-alias-state-success-primary, #6fba2c);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20c0-8 5-15 15-16 .6 9-4 15-11 16-1.2.15-2.4.2-4 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20c0-8 5-15 15-16 .6 9-4 15-11 16-1.2.15-2.4.2-4 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+html body [class*='_markdown_'] h3 {
+  position: relative;
+  padding-left: 14px;
+}
+
+html body [class*='_markdown_'] h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.52em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--dsw-alias-state-warn-primary, #f5c31c);
+}
+
+html body [class*='_markdown_'] li::marker {
+  color: var(--dsw-alias-state-success-primary, #6fba2c);
+}
+
+/* 壁纸在正文区域淡出：中间是干净的纸，四周才是壁纸 */
+html body::after {
+  -webkit-mask-image: radial-gradient(ellipse 76% 68% at 50% 42%, transparent 26%, #000 90%);
+  mask-image: radial-gradient(ellipse 76% 68% at 50% 42%, transparent 26%, #000 90%);
+}
+
+/* ============================================================================
+   标题字体：站酷快乐体（@fontsource/zcool-kuaile，OFL，按 unicode-range 分包）
+   ----------------------------------------------------------------------------
+   只用于标题与首页大标题，正文保持系统字体，避免 14px 下的可读性损失。
+   ========================================================================== */
+html body {
+  --ai-font-display: 'ZCOOL KuaiLe', 'Yuanti SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+html body [class*='_pageTitle'],
+html body [class*='_markdown_'] h1,
+html body [class*='_markdown_'] h2,
+html body [class*='_markdown_'] h3,
+html body [class*='_markdown_'] h4,
+html body [class*='_titleGroup'] {
+  font-family: var(--ai-font-display);
+  letter-spacing: 0.01em;
+}
+
+html body [class*='_markdown_'] h2 {
+  font-size: 20px;
+}
+
+html body [class*='_titleGroup'] {
+  font-size: 30px;
+}
+
+/* ============================================================================
+   用户气泡：薄荷纸 + 细描边 + 小尾巴
+   ========================================================================== */
+html body [class*='_bubble_'] {
+  position: relative;
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--dsw-alias-brand-primary) 42%, transparent);
+}
+
+html body [class*='_bubble_']::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  bottom: -5px;
+  width: 12px;
+  height: 9px;
+  background: inherit;
+  clip-path: polygon(0 0, 100% 0, 92% 100%);
+}
+
+html body[data-ds-dark-theme] [class*='_bubble_'] {
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--dsw-alias-brand-primary) 34%, transparent);
+}
+
+/* ============================================================================
+   分段筛选（自动化任务的 已开启/已暂停/…）：选中态做成薄荷胶囊
+   ========================================================================== */
+html body button[class*='_filterTab'] {
+  border-radius: 999px;
+  transition: background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html body button[class*='_filterTabActive'] {
+  background: var(--dsw-alias-state-business-tertiary, #d8f2ee);
+  color: var(--dsw-alias-state-business-primary, #0a8279);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--dsw-alias-brand-primary) 40%, transparent);
+}
+
+html body[data-ds-dark-theme] button[class*='_filterTabActive'] {
+  background: color-mix(in srgb, var(--dsw-alias-brand-primary) 16%, transparent);
+  color: var(--dsw-alias-brand-primary);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--dsw-alias-brand-primary) 30%, transparent);
+}
+
+/* ============================================================================
+   会话头部标题 & 设置面板：标题字体 + 纸卡边
+   ========================================================================== */
+html body [data-slot='conversation.session.header'] nav {
+  font-family: var(--ai-font-display);
+  font-size: 17px;
+  letter-spacing: 0.01em;
+}
+
+html body [role='dialog'] {
+  box-shadow:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color),
+    0 4px 0 0 #ece1c6,
+    0 28px 56px -16px rgb(61 52 40 / 0.3);
+}
+
+html body[data-ds-dark-theme] [role='dialog'] {
+  box-shadow:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color),
+    0 4px 0 0 #101a18,
+    0 28px 56px -16px rgb(0 0 0 / 0.6);
+}
+
+/* ============================================================================
+   侧栏：分组标题带叶子、选中会话薄荷底；右侧栏入口卡加纸边
+   ========================================================================== */
+html body [class*='_sectionLabel'] {
+  position: relative;
+  padding-left: 17px;
+  color: var(--dsw-alias-label-secondary);
+}
+
+html body [class*='_sectionLabel']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  transform: translateY(-52%) rotate(-10deg);
+  background-color: var(--dsw-alias-state-success-primary, #6fba2c);
+  opacity: 0.85;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20c0-8 5-15 15-16 .6 9-4 15-11 16-1.2.15-2.4.2-4 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 20c0-8 5-15 15-16 .6 9-4 15-11 16-1.2.15-2.4.2-4 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+html body [class*='sessionRow'][class*='selected'] {
+  background: color-mix(in srgb, var(--dsw-alias-brand-primary) 13%, transparent);
+}
+
+html body[data-ds-dark-theme] [class*='sessionRow'][class*='selected'] {
+  background: color-mix(in srgb, var(--dsw-alias-brand-primary) 15%, transparent);
+}
+
+html body [class$='_entry'] {
+  box-shadow:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color),
+    0 2px 0 0 #ece1c6,
+    0 12px 26px -16px rgb(61 52 40 / 0.28);
+}
+
+html body[data-ds-dark-theme] [class$='_entry'] {
+  box-shadow:
+    0 0 0 0.5px var(--dsw-elevation-stroke-color),
+    0 2px 0 0 #101a18,
+    0 12px 26px -16px rgb(0 0 0 / 0.5);
+}
+
+/* 兼容两代 dsh：0.2.2-rc.1 没有 `conversation.hero.frame` hoc，小岛走 shell.overlay；
+   master 之后的版本有该 hoc，小岛由 frame 层渲染。两者同时存在时只留 frame 那一份。 */
+html body:has(.ai-hero-scene--frame) .ai-hero-scene--overlay {
+  display: none;
+}
