@@ -8,10 +8,10 @@ DeepSeek Harness 的动森风格皮肤，亮色「白天岛」+ 暗色「森林�
 ## 安装
 
 ```sh
-dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#COMMIT&path:/skin-animal-island"
+dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#be63c8d7116386604444b34d9d1f1b9eeeaa3386&path:/skin-animal-island"
 ```
 
-或插件页 → 发现 → 添加索引源：`https://cdn.jsdelivr.net/gh/sharkAndshark/dsh-skin-animal-island@main/market/index.json`
+或插件页 → 发现 → 添加索引源：`https://cdn.jsdelivr.net/gh/sharkAndshark/dsh-skin-animal-island@v0.1.0/market/index.json`
 
 需要 `dsh` ≥ 0.2.2-rc.1，装完重启。
 
