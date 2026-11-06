@@ -1,19 +1,21 @@
 # dsh-skin-animal-island
 
-DeepSeek Harness 的动森风格皮肤。
+Animal Crossing–style skin for the DeepSeek Harness (`dsh`) web UI.
 
-## 安装
+[中文](README.zh.md)
+
+## Install
 
 ```sh
-dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#COMMIT&path:/skin-animal-island"
+dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#SHA&path:/skin-animal-island"
 ```
 
-需要 `dsh` ≥ 0.2.2-rc.1，装完重启。
+Requires `dsh` ≥ 0.2.2-rc.1; restart after installing.
 
-## 关闭
+## Disable
 
-插件页关掉该行，或 `config: { enabled: false }`。
+Turn the row off in the Plugins page, or set `config: { enabled: false }`.
 
-## 许可
+## License
 
-代码 MIT；字体 OFL 1.1，见 `assets/fonts/`。
+Code MIT. Fonts (Nunito, ZCOOL KuaiLe) OFL 1.1 — see `assets/fonts/`.

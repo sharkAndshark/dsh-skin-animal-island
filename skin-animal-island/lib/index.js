@@ -81,7 +81,7 @@ export const inject = ['webServer']
 
 /** Volatile config: toggling in the Plugins page persists to the profile patch. */
 export const Config = z.object({
-  enabled: z.boolean().default(true).description('启用动森皮肤（重新加载页面后生效）').volatile(),
+  enabled: z.boolean().default(true).description('Enable the Animal Island skin (reload the page after changing)').volatile(),
 })
 
 /**

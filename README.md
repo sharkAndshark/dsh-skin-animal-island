@@ -1,24 +1,27 @@
-# 动森皮肤 · Animal Island skin
+# Animal Island skin
 
-DeepSeek Harness 的动森风格皮肤，亮色「白天岛」+ 暗色「森林夜」。
+Animal Crossing–style skin for the [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) web UI: cream paper, earth-brown text, mint accents, dotted wallpaper — light「Day Island」and dark「Forest Night」.
 
-![亮色首页](docs/screenshots/light-home.png)
-![暗色会话](docs/screenshots/dark-conversation.png)
+[中文](README.zh.md)
 
-## 安装
+![Light home](docs/screenshots/light-home.png)
+![Dark conversation](docs/screenshots/dark-conversation.png)
+
+## Install
+
+Requires `dsh` ≥ 0.2.2-rc.1; restart after installing.
 
 ```sh
-dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#be63c8d7116386604444b34d9d1f1b9eeeaa3386&path:/skin-animal-island"
+dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#SHA&path:/skin-animal-island"
 ```
 
-或插件页 → 发现 → 添加索引源：`https://cdn.jsdelivr.net/gh/sharkAndshark/dsh-skin-animal-island@v0.1.0/market/index.json`
+Or in the app: **Plugins → Discover → Add index source** →
+`https://cdn.jsdelivr.net/gh/sharkAndshark/dsh-skin-animal-island@v0.1.1/market/index.json`
 
-需要 `dsh` ≥ 0.2.2-rc.1，装完重启。
+## Disable
 
-## 关闭
+Turn the row off in the Plugins page, or set `config: { enabled: false }`.
 
-插件页关掉该行，或 `config: { enabled: false }`。
+## License
 
-## 许可
-
-代码 MIT；字体 OFL 1.1，见 `skin-animal-island/assets/fonts/`。
+Code MIT. Fonts (Nunito, ZCOOL KuaiLe) OFL 1.1 — see `skin-animal-island/assets/fonts/`.
