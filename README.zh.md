@@ -12,7 +12,7 @@ DeepSeek Harness Web 客户端的动森风格皮肤：奶油纸底、大地棕�
 需要 `dsh` ≥ 0.2.2-rc.1，装完重启。
 
 ```sh
-dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#SHA&path:/skin-animal-island"
+dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#9266288b6262c56b7e88d6a1c54e71bf0b21fc06&path:/skin-animal-island"
 ```
 
 或在应用里：**插件 → 发现 → 添加索引源** →
