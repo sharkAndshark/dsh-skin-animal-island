@@ -12,7 +12,7 @@ Animal Crossing–style skin for the [DeepSeek Harness](https://github.com/deeps
 Requires `dsh` ≥ 0.2.2-rc.1; restart after installing.
 
 ```sh
-dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#SHA&path:/skin-animal-island"
+dsh plugin --profile web add "git+https://github.com/sharkAndshark/dsh-skin-animal-island.git#09eeb72a47ed5beaec7308b2917add9449eb51a1&path:/skin-animal-island"
 ```
 
 Or in the app: **Plugins → Discover → Add index source** →
