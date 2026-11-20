@@ -89,7 +89,11 @@ export const Config = z.object({
  * @param ctx - host plugin context.
  */
 export function apply(ctx, config) {
-  ctx.webServer.register({ kind: 'prefix', path: PREFIX, resource })
+  // The returned disposer has to ride the fiber: without it a disable/enable
+  // cycle (or HMR re-apply) leaves the old route in the table and the second
+  // registration throws "duplicate prefix route".
+  ctx.effect(() => ctx.webServer.register({ kind: 'prefix', path: PREFIX, resource }),
+    'skin-animal-island: assets route')
   ctx.effect(() => ctx.on('webserver/index-inject', (table) => {
     // The client half reads this row before it registers anything, so one flag
     // turns both halves off; the stylesheet link is skipped outright.
